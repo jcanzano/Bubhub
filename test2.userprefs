@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\NetworkedPlayerController.cs">
+    <Files>
+      <File FileName="Assets\NetworkedPlayerController.cs" Line="18" Column="46" />
+      <File FileName="Assets\scripts\playerController.cs" Line="14" Column="20" />
+      <File FileName="Assets\Postoffset.cs" Line="9" Column="32" />
+      <File FileName="Assets\roombehavior.cs" Line="49" Column="37" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
