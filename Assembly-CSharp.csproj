@@ -46,12 +46,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EthanController.cs" />
      <Compile Include="Assets\NetworkedPlayerController.cs" />
      <Compile Include="Assets\Postoffset.cs" />
      <Compile Include="Assets\cameracontroller.cs" />
+     <Compile Include="Assets\eletrigger.cs" />
+     <Compile Include="Assets\elevatorbehavior.cs" />
+     <Compile Include="Assets\floorbehavior.cs" />
      <Compile Include="Assets\framebehavior.cs" />
+     <Compile Include="Assets\frames.cs" />
+     <Compile Include="Assets\globalvars.cs" />
+     <Compile Include="Assets\jxnroom.cs" />
      <Compile Include="Assets\roombehavior.cs" />
+     <Compile Include="Assets\rooms.cs" />
      <Compile Include="Assets\scripts\playerController.cs" />
+     <Compile Include="Assets\small30.cs" />
+     <Compile Include="Assets\specialframe.cs" />
      <Compile Include="Assets\trigger.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
