@@ -44,32 +44,38 @@ public class floorbehavior : MonoBehaviour {
 	IEnumerator tumblrget(int postoffset) 
 	{
 		//makes three consecutive requests as 50 is max posts retrievable and too small for a whole floor 
-		int tempoffset = postoffset + 50;
-		int tempoffset2 = postoffset + 100;
 		Debug.Log ("Sending requests to tumblr...");
 		WWW www = new WWW (url + postoffset.ToString()); //www object contains only raw json
 		yield return www; //waits for response before proceeding
 		Debug.Log ("Request 1 returned");
+		JsonData data = JsonMapper.ToObject (www.text); //maps json to nested jsondata object. posts are stored in ["response"]["liked_posts"][i]
+		yield return data;
+		Debug.Log("mapped " + data["response"]["liked_posts"].Count + " posts to data starting from post " + postoffset);
+		int tempoffset = postoffset + data["response"]["liked_posts"].Count;
 		WWW www1 = new WWW (url + tempoffset.ToString());
 		yield return www1;
 		Debug.Log ("Request 2 returned");
+		JsonData data1 = JsonMapper.ToObject (www1.text);
+		yield return data1;
+		Debug.Log("mapped " + data1["response"]["liked_posts"].Count + " posts to data1 starting from post " + tempoffset);
+		int tempoffset2 = tempoffset + data1["response"]["liked_posts"].Count;
 		WWW www2 = new WWW (url + tempoffset2.ToString ());
 		yield return www2;
 		Debug.Log ("Request 3 returned");
+		JsonData data2 = JsonMapper.ToObject (www2.text);
+		yield return data2;
+		Debug.Log("mapped " + data2["response"]["liked_posts"].Count + " posts to data2 starting from post " + tempoffset2);
 
 		//parses pages into one json object containing all posts (unfortunately no elegant means of concatenating this type...)
-		JsonData data = JsonMapper.ToObject (www.text); //maps json to nested jsondata object. posts are stored in ["response"]["liked_posts"][i]
-		JsonData data1 = JsonMapper.ToObject (www1.text);
-		JsonData data2 = JsonMapper.ToObject (www2.text);
 		JsonData posts = data["response"]["liked_posts"]; //new nested array of only the posts, now stored in [i]. Makes iteration simpler to code. Must cast type when using.  
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < data1["response"]["liked_posts"].Count; i++) {
 			posts.Add (data1 ["response"] ["liked_posts"][i]);
 		}
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < data2["response"]["liked_posts"].Count; i++) {
 			posts.Add (data2["response"]["liked_posts"][i]);
 		}
 		Debug.Log ("Received " + posts.Count + " raw posts");
-		player.GetComponent<globalvars> ().postoffset = postoffset + 150;
+		player.GetComponent<globalvars> ().postoffset = postoffset + posts.Count;
 		Debug.Log ("New postoffset is " + player.GetComponent<globalvars> ().postoffset);
 
 
