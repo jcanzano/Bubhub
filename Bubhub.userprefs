@@ -1,9 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\floorbehavior.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\specialframe.cs">
     <Files>
-      <File FileName="Assets\scripts\roombehavior.cs" Line="37" Column="18" />
-      <File FileName="Assets\scripts\floorbehavior.cs" Line="46" Column="22" />
+      <File FileName="Assets\scripts\roombehavior.cs" Line="13" Column="2" />
+      <File FileName="Assets\scripts\floorbehavior.cs" Line="206" Column="200" />
+      <File FileName="Assets\scripts\rooms.cs" Line="26" Column="67" />
+      <File FileName="Assets\scripts\frames.cs" Line="30" Column="34" />
+      <File FileName="Assets\scripts\specialframe.cs" Line="60" Column="32" />
+      <File FileName="Assets\scripts\eletrigger.cs" Line="14" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
